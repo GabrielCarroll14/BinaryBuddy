@@ -103,7 +103,7 @@ def hap_window_func():
     happiness_label = CTkLabel(hapwindow, text = ("Your " + animal_type + "'s happiness is " + str(happiness_var) + "! "))
     happiness_label.pack(padx=5,pady=5)
     
-    
+    cuddle_button = CTkButton (hapwindow, text = "Cuddle! ")
     
     # Create the mainloop
     hapwindow.mainloop()
