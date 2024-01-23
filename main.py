@@ -114,6 +114,24 @@ def hap_window_func():
     # Create the mainloop
     hapwindow.mainloop()
     
+def eng_window_function():
+    
+    # Create the settings for the window
+    engwindow = customtkinter.CTk()
+    engwindow.geometry("400x400")
+    engwindow.title("Energy Menu")
+    
+    # Create the label displaying cats energy in a variable
+    energy_label = CTkLabel(engwindow, text = ("Your " + animal_type + "'s energy is " + str(energy_var) + "! "))
+    energy_label.pack(padx=5,pady=5)
+    
+    # Create the button to feed your animal to increase energy
+    feed_button = CTkButton (engwindow, text = "Feed! ")
+    feed_button.pack(padx=5, pady=5)
+    
+    # Create the button to stroke your animal to increase energy
+    walk_button = CTkButton(engwindow, text="Walk!")
+    walk_button.pack(padx=5, pady=5)
 
 # Create the main function
 def main_screen():
@@ -163,7 +181,7 @@ def main_screen():
     hap_button.pack(padx=5, pady=5)
     
     # Button leading into the energy menu
-    eng_button = CTkButton(root, text="Energy")
+    eng_button = CTkButton(root, text="Energy", command=eng_window_function)
     eng_button.pack(padx=5, pady=5)
     
     # create the button for the animals mood
