@@ -37,6 +37,31 @@ rabbit = r"""
  o_(")(")
 """
 
+# Function to display animal stats
+def display_stats():
+    
+    # Create the window settings
+    stat_window = customtkinter.CTk()
+    stat_window.geometry("100x100")
+    stat_window.title("Animal Health")
+    customtkinter.set_appearance_mode("system")
+    customtkinter.set_default_color_theme("blue")
+    
+    # Create the happiness stat
+    hap_stat = CTkLabel(stat_window, text = ("Happiness: " + str(happiness_var) + ""))
+    hap_stat.pack(padx=5, pady=5)
+    
+    # Create the energy stat
+    eng_stat = CTkLabel(stat_window, text = ("Energy: " + str(energy_var) + ""))
+    eng_stat.pack(padx=5, pady=5)
+    
+    # Create the mood stat
+    mood_stat = CTkLabel(stat_window, text = ("Mood: " + str(mood_var) + ""))
+    mood_stat.pack(padx=5, pady=5)
+    
+    # Create the mainloop
+    stat_window.mainloop()
+
 # Create the command for saving rabbit as animal type
 def animal_type_rabbit():
     # Declare animal type variable as global
