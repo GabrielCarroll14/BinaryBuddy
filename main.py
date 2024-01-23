@@ -113,7 +113,8 @@ def hap_window_func():
     
     # Create the mainloop
     hapwindow.mainloop()
-    
+   
+# Create the function for the energy window    
 def eng_window_function():
     
     # Create the settings for the window
@@ -132,6 +133,32 @@ def eng_window_function():
     # Create the button to stroke your animal to increase energy
     walk_button = CTkButton(engwindow, text="Walk!")
     walk_button.pack(padx=5, pady=5)
+    
+    # Create the mainloop
+    engwindow.mainloop()
+
+# Create the function for the mood window
+def mood_window_function():
+    
+    # Create the settings for the window
+    moodwindow = customtkinter.CTk()
+    moodwindow.geometry("400x400")
+    moodwindow.title("Mood Menu")
+    
+    # Create the label displaying animals mood in a variable
+    mood_label = CTkLabel(moodwindow, text = ("Your " + animal_type + "'s mood is " + str(mood_var) + "! "))
+    mood_label.pack(padx=5,pady=5)
+    
+    # Create the button to play music to your animal to increase mood
+    music_button = CTkButton (moodwindow, text = "Play Music!")
+    music_button.pack(padx=5, pady=5)
+    
+    # Create the button to give treats to your animal to increase mood
+    treat_button = CTkButton(moodwindow, text="Give Treats!")
+    treat_button.pack(padx=5, pady=5)
+    
+    # Create the mainloop
+    moodwindow.mainloop()
 
 # Create the main function
 def main_screen():
@@ -185,7 +212,7 @@ def main_screen():
     eng_button.pack(padx=5, pady=5)
     
     # create the button for the animals mood
-    mood_button = CTkButton(root, text="Mood")
+    mood_button = CTkButton(root, text="Mood", command=mood_window_function)
     mood_button.pack(padx=5, pady=5)
     
     # Create the mainloop
