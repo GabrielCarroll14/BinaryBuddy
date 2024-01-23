@@ -96,7 +96,7 @@ def hap_window_func():
     
     # Create the settings for the window
     hapwindow = customtkinter.CTk()
-    hapwindow.geometry("400x400")
+    hapwindow.geometry("180x120")
     hapwindow.title("Happiness Menu")
     
     # Create the label displaying cats happiness in a variable
@@ -119,7 +119,7 @@ def eng_window_function():
     
     # Create the settings for the window
     engwindow = customtkinter.CTk()
-    engwindow.geometry("400x400")
+    engwindow.geometry("180x120")
     engwindow.title("Energy Menu")
     
     # Create the label displaying cats energy in a variable
@@ -142,7 +142,7 @@ def mood_window_function():
     
     # Create the settings for the window
     moodwindow = customtkinter.CTk()
-    moodwindow.geometry("400x400")
+    moodwindow.geometry("180x120")
     moodwindow.title("Mood Menu")
     
     # Create the label displaying animals mood in a variable
