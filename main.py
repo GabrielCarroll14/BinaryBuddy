@@ -40,6 +40,7 @@ rabbit = r"""
 # Cuddle menu
 def cuddle_menu():
     
+    # Declair the var as global
     global happiness_var
     
     # Create the danger factor
