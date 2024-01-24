@@ -37,6 +37,62 @@ rabbit = r"""
  o_(")(")
 """
 
+# Cuddle menu
+def cuddle_menu():
+    
+    global happiness_var
+    
+    # Create the danger factor
+    danger_factor = random.randint(1, 3)
+
+    # When the user cuddles the animal unsucsessfully    
+    if danger_factor == 3:
+        
+        # Windows settings
+        cud_win = customtkinter.CTk()
+        cud_win.geometry("320x50")
+        cud_win.title("Cuddle")
+        customtkinter.set_appearance_mode("system")
+        customtkinter.set_default_color_theme("blue")
+
+        # Take away the correct amount from the variable
+        happiness_var = happiness_var - 10
+
+        # Create the label displaying what has happened
+        text_label =  CTkLabel(cud_win, text="Your " + animal_type + " diddn't like your cuddle! -10 Happiness!")
+        text_label.pack(padx=5, pady=5)
+        
+        # Create the mainloop
+        cud_win.mainloop()
+
+        # Run the display stats window
+        display_stats()
+        
+    # When the user cuddles anima sucsessfully
+    else:
+        
+        # Windows settings
+        cud_win = customtkinter.CTk()
+        cud_win.geometry("320x50")
+        cud_win.title("Cuddle")
+        customtkinter.set_appearance_mode("system")
+        customtkinter.set_default_color_theme("blue")
+
+        # Take away the correct amount from the variable
+        happiness_var = happiness_var + 10
+
+        # Create the label displaying what has happened
+        text_label =  CTkLabel(cud_win, text="You cuddled you " + animal_type + " sucsessfully! +10 Happiness!")
+        text_label.pack(padx=5, pady=5)
+        
+        # Create the mainloop
+        cud_win.mainloop()
+        
+        # Run the display stats window
+        display_stats()
+    
+
+
 # Function to display animal stats
 def display_stats():
     
@@ -129,7 +185,7 @@ def hap_window_func():
     happiness_label.pack(padx=5,pady=5)
     
     # Create the button to cuddle your animal to increase happiness
-    cuddle_button = CTkButton (hapwindow, text = "Cuddle! ")
+    cuddle_button = CTkButton (hapwindow, text = "Cuddle! ", command=cuddle_menu)
     cuddle_button.pack(padx=5, pady=5)
     
     # Create the button to stroke your animal to increase happiness
