@@ -37,6 +37,60 @@ rabbit = r"""
  o_(")(")
 """
 
+# Stroke menu
+def stroke_menu(): 
+    # Declair the var as global
+    global happiness_var
+    
+    # Create the danger factor
+    danger_factor = random.randint(1, 3)
+
+    # When the user storkes the animal unsucsessfully    
+    if danger_factor == 3:
+        
+        # Windows settings
+        str_win = customtkinter.CTk()
+        str_win.geometry("320x50")
+        str_win.title("Stroke")
+        customtkinter.set_appearance_mode("system")
+        customtkinter.set_default_color_theme("blue")
+
+        # Take away the correct amount from the variable
+        happiness_var = happiness_var - 10
+
+        # Create the label displaying what has happened
+        text_label =  CTkLabel(str_win, text="Your " + animal_type + " diddn't like your stroking! -10 Happiness!")
+        text_label.pack(padx=5, pady=5)
+        
+        # Create the mainloop
+        str_win.mainloop()
+        
+        # Display the stats menu
+        display_stats()
+        
+    # When the user stroke animal sucsessfully
+    else:
+        
+        # Windows settings
+        str_win = customtkinter.CTk()
+        str_win.geometry("320x50")
+        str_win.title("Stroke")
+        customtkinter.set_appearance_mode("system")
+        customtkinter.set_default_color_theme("blue")
+
+        # Take away the correct amount from the variable
+        happiness_var = happiness_var + 10
+
+        # Create the label displaying what has happened
+        text_label =  CTkLabel(str_win, text="You stroked you " + animal_type + " sucsessfully! +10 Happiness!")
+        text_label.pack(padx=5, pady=5)
+        
+        # Create the mainloop
+        str_win.mainloop()
+        
+        # Display the stats menu
+        display_stats()
+
 # Cuddle menu
 def cuddle_menu():
     
@@ -91,8 +145,6 @@ def cuddle_menu():
         
         # Run the display stats window
         display_stats()
-    
-
 
 # Function to display animal stats
 def display_stats():
@@ -190,7 +242,7 @@ def hap_window_func():
     cuddle_button.pack(padx=5, pady=5)
     
     # Create the button to stroke your animal to increase happiness
-    stroke_button = CTkButton(hapwindow, text="Stroke")
+    stroke_button = CTkButton(hapwindow, text="Stroke", command=stroke_menu)
     stroke_button.pack(padx=5, pady=5)
     
     # Create the mainloop
