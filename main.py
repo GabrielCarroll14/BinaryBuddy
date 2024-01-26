@@ -1,5 +1,5 @@
 # Import stuffs
-import tkinter
+import tkinter # Tkinter is currently not in use becuase customtkinter is being used instead
 import customtkinter
 from customtkinter import *
 from tkinter import *
@@ -13,7 +13,7 @@ trait = random.choice(["crazy", "funny", "kind", "selfish", "angry", "stupid", "
 happiness_var = 100
 energy_var = 100
 mood_var = 100
-mood_text_var = "" # This will be implemented in a later version
+mood_text_var = "" # This will be implemented in a later version of the code
 
 # Create the variable to store the type of animal the user has chosen
 animal_type = ""
