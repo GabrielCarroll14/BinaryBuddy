@@ -37,114 +37,153 @@ rabbit = r"""
  o_(")(")
 """
 
-# Stroke menu
-def stroke_menu(): 
-    # Declair the var as global
-    global happiness_var
-    
-    # Create the danger factor
-    danger_factor = random.randint(1, 3)
-
-    # When the user storkes the animal unsucsessfully    
-    if danger_factor == 3:
-        
-        # Windows settings
-        str_win = customtkinter.CTk()
-        str_win.geometry("320x50")
-        str_win.title("Stroke")
-        customtkinter.set_appearance_mode("system")
-        customtkinter.set_default_color_theme("blue")
-
-        # Take away the correct amount from the variable
-        happiness_var = happiness_var - 10
-
-        # Create the label displaying what has happened
-        text_label =  CTkLabel(str_win, text="Your " + animal_type + " diddn't like your stroking! -10 Happiness!")
-        text_label.pack(padx=5, pady=5)
-        
-        # Create the mainloop
-        str_win.mainloop()
-        
-        # Display the stats menu
-        display_stats()
-        
-    # When the user stroke animal sucsessfully
-    else:
-        
-        # Windows settings
-        str_win = customtkinter.CTk()
-        str_win.geometry("320x50")
-        str_win.title("Stroke")
-        customtkinter.set_appearance_mode("system")
-        customtkinter.set_default_color_theme("blue")
-
-        # Take away the correct amount from the variable
-        happiness_var = happiness_var + 10
-
-        # Create the label displaying what has happened
-        text_label =  CTkLabel(str_win, text="You stroked you " + animal_type + " sucsessfully! +10 Happiness!")
-        text_label.pack(padx=5, pady=5)
-        
-        # Create the mainloop
-        str_win.mainloop()
-        
-        # Display the stats menu
-        display_stats()
-
-# Cuddle menu
 def cuddle_menu():
     
-    # Declair the var as global
+    global goodphrase
+    global badphrase
+    global word
+    global type
+    
+    badphrase = ("Your " + animal_type + " diddnt like your cuddle")
+    goodphrase = ("Your " + animal_type + " loved your cuddle")
+    word = ("Cuddle")
+    type = ("Happiness")
+    general_window()
+    
+def stroke_menu():
+    
+    global goodphrase
+    global badphrase
+    global word
+    global type
+    
+    goodphrase = ("Your " + animal_type + " loved your stroking")
+    badphrase = ("Your " + animal_type + " hated your stroking")
+    word = ("Stroke")
+    type = ("Happiness")
+    general_window()
+    
+def feed_menu():
+    
+    global goodphrase
+    global badphrase
+    global word
+    global type
+    
+    goodphrase = ("Your " + animal_type + " loved your food")
+    badphrase = ("Your " + animal_type + " hated your food")
+    word = ("Feed")
+    type = ("Energy")
+    general_window()
+    
+def walk_menu():
+    
+    global goodphrase
+    global badphrase
+    global word
+    global type
+    
+    goodphrase = ("Your " + animal_type + " loved going for a walk")
+    badphrase = ("Your " + animal_type + " hated going for a walk")
+    word = ("Walk")
+    type = ("Energy")
+    general_window()
+    
+def music_menu():
+    
+    global goodphrase
+    global badphrase
+    global word
+    global type
+    
+    goodphrase = ("Your " + animal_type + " loved the music")
+    badphrase = ("Your " + animal_type + " hated the music")
+    word = ("Music")
+    type = ("Mood")
+    general_window()
+    
+def stroke_menu():
+    
+    global goodphrase
+    global badphrase
+    global word
+    global type
+    
+    goodphrase = ("Your " + animal_type + " loved the treats")
+    badphrase = ("Your " + animal_type + " hated the treats")
+    word = ("Treats")
+    type = ("Mood")
+    general_window()
+    
+    
+    
+def general_window():
+    
+    global goodphrase
+    global word
+    global energy_var
     global happiness_var
+    global mood_var
+    global type
+    global badphrase
     
     # Create the danger factor
     danger_factor = random.randint(1, 3)
 
-    # When the user cuddles the animal unsucsessfully    
+    # When the user walks the animal unsucsessfully    
     if danger_factor == 3:
         
         # Windows settings
-        cud_win = customtkinter.CTk()
-        cud_win.geometry("320x50")
-        cud_win.title("Cuddle")
+        gen_win = customtkinter.CTk()
+        gen_win.geometry("320x50")
+        gen_win.title("Window")
         customtkinter.set_appearance_mode("system")
         customtkinter.set_default_color_theme("blue")
 
-        # Take away the correct amount from the variable
-        happiness_var = happiness_var - 10
-
+        if type == "Happiness":
+            happiness_var = happiness_var - 10
+        
+        elif type == "Energy":
+            energy_var = energy_var - 10
+        
+        elif type == "Mood":
+            mood_var = mood_var - 10
+        
         # Create the label displaying what has happened
-        text_label =  CTkLabel(cud_win, text="Your " + animal_type + " diddn't like your cuddle! -10 Happiness!")
+        text_label =  CTkLabel(gen_win, text=("" + badphrase + "! -10 " + type + "!"))
         text_label.pack(padx=5, pady=5)
         
         # Create the mainloop
-        cud_win.mainloop()
-
-        # Run the display stats window
-        display_stats()
+        gen_win.mainloop()
         
-    # When the user cuddles anima sucsessfully
     else:
         
         # Windows settings
-        cud_win = customtkinter.CTk()
-        cud_win.geometry("320x50")
-        cud_win.title("Cuddle")
+        gen_win = customtkinter.CTk()
+        gen_win.geometry("320x50")
+        gen_win.title("Window")
         customtkinter.set_appearance_mode("system")
         customtkinter.set_default_color_theme("blue")
 
-        # Take away the correct amount from the variable
-        happiness_var = happiness_var + 10
+        if type == "Happiness":
+            happiness_var = happiness_var + 10
+        
+        elif type == "Energy":
+            energy_var = energy_var + 10
+        
+        elif type == "Mood":
+            mood_var = mood_var + 10
 
         # Create the label displaying what has happened
-        text_label =  CTkLabel(cud_win, text="You cuddled you " + animal_type + " sucsessfully! +10 Happiness!")
+        text_label =  CTkLabel(gen_win, text=("" + goodphrase + "! +10 " + type + "!"))
         text_label.pack(padx=5, pady=5)
         
         # Create the mainloop
-        cud_win.mainloop()
+        gen_win.mainloop()
         
-        # Run the display stats window
-        display_stats()
+    # Display the stats menu
+    display_stats()
+
 
 # Function to display animal stats
 def display_stats():
@@ -261,11 +300,11 @@ def eng_window_function():
     energy_label.pack(padx=5,pady=5)
     
     # Create the button to feed your animal to increase energy
-    feed_button = CTkButton (engwindow, text = "Feed! ")
+    feed_button = CTkButton (engwindow, text = "Feed! ", command= feed_menu)
     feed_button.pack(padx=5, pady=5)
     
     # Create the button to stroke your animal to increase energy
-    walk_button = CTkButton(engwindow, text="Walk!")
+    walk_button = CTkButton(engwindow, text="Walk!", command=walk_menu)
     walk_button.pack(padx=5, pady=5)
     
     # Create the mainloop
@@ -284,7 +323,7 @@ def mood_window_function():
     mood_label.pack(padx=5,pady=5)
     
     # Create the button to play music to your animal to increase mood
-    music_button = CTkButton (moodwindow, text = "Play Music!")
+    music_button = CTkButton (moodwindow, text = "Play Music!", command=music_menu)
     music_button.pack(padx=5, pady=5)
     
     # Create the button to give treats to your animal to increase mood
