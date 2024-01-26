@@ -13,7 +13,7 @@ trait = random.choice(["crazy", "funny", "kind", "selfish", "angry", "stupid", "
 happiness_var = 100
 energy_var = 100
 mood_var = 100
-mood_text_var = ""
+mood_text_var = "" # This will be implemented in a later version
 
 # Create the variable to store the type of animal the user has chosen
 animal_type = ""
@@ -37,6 +37,7 @@ rabbit = r"""
  o_(")(")
 """
 
+# Create all of these functions to store specific data and for calling more functions
 def cuddle_menu():
     
     global goodphrase
@@ -48,10 +49,8 @@ def cuddle_menu():
     goodphrase = ("Your " + animal_type + " loved your cuddle")
     word = ("Cuddle")
     type = ("Happiness")
-    general_window()
-    
-def stroke_menu():
-    
+    general_window()    
+def stroke_menu():    
     global goodphrase
     global badphrase
     global word
@@ -61,10 +60,8 @@ def stroke_menu():
     badphrase = ("Your " + animal_type + " hated your stroking")
     word = ("Stroke")
     type = ("Happiness")
-    general_window()
-    
-def feed_menu():
-    
+    general_window()    
+def feed_menu():    
     global goodphrase
     global badphrase
     global word
@@ -74,8 +71,7 @@ def feed_menu():
     badphrase = ("Your " + animal_type + " hated your food")
     word = ("Feed")
     type = ("Energy")
-    general_window()
-    
+    general_window()    
 def walk_menu():
     
     global goodphrase
@@ -87,8 +83,7 @@ def walk_menu():
     badphrase = ("Your " + animal_type + " hated going for a walk")
     word = ("Walk")
     type = ("Energy")
-    general_window()
-    
+    general_window()    
 def music_menu():
     
     global goodphrase
@@ -100,9 +95,8 @@ def music_menu():
     badphrase = ("Your " + animal_type + " hated the music")
     word = ("Music")
     type = ("Mood")
-    general_window()
-    
-def stroke_menu():
+    general_window()    
+def treats_menu():
     
     global goodphrase
     global badphrase
@@ -184,7 +178,6 @@ def general_window():
     # Display the stats menu
     display_stats()
 
-
 # Function to display animal stats
 def display_stats():
     
@@ -261,7 +254,6 @@ def confirm_setup_terminal():
         if content == "Dog":
             print ("Dog saved to file")
             
-            
     print("Animal name *" + (animal_name.get()) + "* saved to file. ")
 
 # Create the function for the happiness window
@@ -327,7 +319,7 @@ def mood_window_function():
     music_button.pack(padx=5, pady=5)
     
     # Create the button to give treats to your animal to increase mood
-    treat_button = CTkButton(moodwindow, text="Give Treats!")
+    treat_button = CTkButton(moodwindow, text="Give Treats!", command=treats_menu)
     treat_button.pack(padx=5, pady=5)
     
     # Create the mainloop
