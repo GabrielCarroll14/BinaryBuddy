@@ -114,11 +114,11 @@ def stroke_menu():
     word = ("Treats")
     type = ("Mood")
     general_window()
-    
-    
-    
+  
+# Create the main window for generating if the user was sucsessfull in helping there pet  
 def general_window():
     
+    # Declare as global
     global goodphrase
     global word
     global energy_var
