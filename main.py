@@ -124,7 +124,7 @@ def general_window():
     # Create the danger factor
     danger_factor = random.randint(1, 3)
 
-    # When the user walks the animal unsucsessfully    
+    # unsucsessfull scenario   
     if danger_factor == 3:
         
         # Windows settings
@@ -134,12 +134,11 @@ def general_window():
         customtkinter.set_appearance_mode("system")
         customtkinter.set_default_color_theme("blue")
 
+        # Choose where to add or extract wellbieng from based on the info from the above funcs
         if type == "Happiness":
             happiness_var = happiness_var - 10
-        
         elif type == "Energy":
             energy_var = energy_var - 10
-        
         elif type == "Mood":
             mood_var = mood_var - 10
         
@@ -149,7 +148,8 @@ def general_window():
         
         # Create the mainloop
         gen_win.mainloop()
-        
+    
+    # Sucsessfull scenario    
     else:
         
         # Windows settings
@@ -159,12 +159,11 @@ def general_window():
         customtkinter.set_appearance_mode("system")
         customtkinter.set_default_color_theme("blue")
 
+        # Choose where to add or extract wellbieng from based on the info from the above funcs
         if type == "Happiness":
             happiness_var = happiness_var + 10
-        
         elif type == "Energy":
             energy_var = energy_var + 10
-        
         elif type == "Mood":
             mood_var = mood_var + 10
 
@@ -176,7 +175,7 @@ def general_window():
         gen_win.mainloop()
         
     # Display the stats menu
-    display_stats()
+    display_stats() # Fix in future version
 
 # Function to display animal stats
 def display_stats():
