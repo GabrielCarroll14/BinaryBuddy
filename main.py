@@ -346,7 +346,7 @@ def main_screen():
     root.title("BinaryBuddy")
     customtkinter.set_appearance_mode("system")
     customtkinter.set_default_color_theme("blue")
-    root.geometry("270x160") # Dynamic resalution to be applied in the future to window size matches up with the text length
+    root.geometry("285x260") # Dynamic resalution to be applied in the future to window size matches up with the text length
     
     # Print the info about the animal
     animal_info = CTkLabel(root, text=("Hi! My name is " + animal_name.get() + " and I am a " + trait + " " + animal_type + "! "))
