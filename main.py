@@ -383,10 +383,10 @@ def main_screen():
     # Create the mainloop
     root.mainloop()
 
-# Create setup window. This is for the the info about the animal
+# Create setup window. This is for the the info about the animal.
 setup_window = customtkinter.CTk()
 setup_window.geometry("160x225")
-customtkinter.set_appearance_mode("system") # The user may ajust this to "light" or "dark" mode depending on their preferences 
+customtkinter.set_appearance_mode("system") # The user may ajust this to "light" or "dark" mode depending on their preferences .
 customtkinter.set_default_color_theme("blue")
 setup_window.title("Setup")
 
