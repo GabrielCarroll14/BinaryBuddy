@@ -1,5 +1,5 @@
 # Import stuffs
-import tkinter # Tkinter is currently not in use becuase customtkinter is being used instead
+import tkinter
 import customtkinter
 from customtkinter import *
 from tkinter import *
@@ -346,7 +346,7 @@ def main_screen():
     root.title("BinaryBuddy")
     customtkinter.set_appearance_mode("system")
     customtkinter.set_default_color_theme("blue")
-    root.geometry("285x260") # Dynamic resalution to be applied in the future to window size matches up with the text length
+    root.geometry("285x260")
     
     # Print the info about the animal
     animal_info = CTkLabel(root, text=("Hi! My name is " + animal_name.get() + " and I am a " + trait + " " + animal_type + "! "))
@@ -386,7 +386,7 @@ def main_screen():
 # Create setup window. This is for the the info about the animal.
 setup_window = customtkinter.CTk()
 setup_window.geometry("160x225")
-customtkinter.set_appearance_mode("system") # The user may ajust this to "light" or "dark" mode depending on their preferences .
+customtkinter.set_appearance_mode("system")
 customtkinter.set_default_color_theme("blue")
 setup_window.title("Setup")
 
