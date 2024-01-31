@@ -13,7 +13,6 @@ trait = random.choice(["crazy", "funny", "kind", "selfish", "angry", "stupid", "
 happiness_var = 100
 energy_var = 100
 mood_var = 100
-mood_text_var = "" # This will be implemented in a later version of the code
 
 # Create the variable to store the type of animal the user has chosen
 animal_type = ""
@@ -389,8 +388,6 @@ setup_window.geometry("160x225")
 customtkinter.set_appearance_mode("system")
 customtkinter.set_default_color_theme("blue")
 setup_window.title("Setup")
-
-# Create the buttons, labels and entry boxes.
 
 # Create the label telling the user to input the animals name
 name_label = CTkLabel(setup_window, text="Enter Animal Name Here!")
