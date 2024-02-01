@@ -1,4 +1,3 @@
-# Import stuffs
 import tkinter
 import customtkinter
 from customtkinter import *
