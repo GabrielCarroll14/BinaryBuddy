@@ -5,7 +5,7 @@ from tkinter import *
 import winsound
 import random
 
-# Create the animals key trait
+# Create the animals trait var
 trait = random.choice(["crazy", "funny", "kind", "selfish", "angry", "stupid", "clever"])
 
 # Create variables for the animals health
