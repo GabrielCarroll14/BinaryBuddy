@@ -158,7 +158,7 @@ def general_window():
         customtkinter.set_appearance_mode("system")
         customtkinter.set_default_color_theme("blue")
 
-        # Choose where to add or extract wellbieng from based on the info from the above funcs
+        # Choose where to add or extract wellbeing from based on the info from the above funcs
         if type == "Happiness":
             happiness_var = happiness_var + 10
         elif type == "Energy":
