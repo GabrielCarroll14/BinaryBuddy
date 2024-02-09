@@ -228,7 +228,7 @@ def animal_type_dog():
     with open ("animal_type.txt", "w") as file:
         file.write ("Dog")
 
-# Create the function to confirm dat in terminal
+# Create the function to confirm info in terminal
 def confirm_setup_terminal():
 
     if animal_type == "Rabbit":
