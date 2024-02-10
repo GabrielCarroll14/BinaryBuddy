@@ -326,7 +326,7 @@ def mood_window_function():
 # Create the main function
 def main_screen():
     
-    # Make the animal name global
+    # declare the animal name global
     global animal_name
     
     # Use this function to confirm all the dat in terminal
