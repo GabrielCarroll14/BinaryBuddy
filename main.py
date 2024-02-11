@@ -345,7 +345,7 @@ def main_screen():
     root.title("BinaryBuddy")
     customtkinter.set_appearance_mode("system")
     customtkinter.set_default_color_theme("blue")
-    root.geometry("285x260")
+    root.geometry("285x260") # dYNAMIC RES LATER
     
     # Print the info about the animal
     animal_info = CTkLabel(root, text=("Hi! My name is " + animal_name.get() + " and I am a " + trait + " " + animal_type + "! "))
