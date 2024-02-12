@@ -17,7 +17,7 @@ mood_var = 100
 # Create the variable to store the type of animal the user has chosen
 animal_type = ""
 
-# Create the animal variable image art
+# Create the animal variable image artwork
 cat = r"""
  /\_/\ 
 ( o.o )
